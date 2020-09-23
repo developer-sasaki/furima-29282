@@ -46,8 +46,8 @@ Things you may want to cover:
 ## item_purchasesテーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| users   | references | null: false, foreign_key: true |
-| items   | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to:user
@@ -60,27 +60,21 @@ Things you may want to cover:
 | ------ | ---------- | ------------------------------ |
 | item_name  | string | null: false |
 | price  | integer | null: false |
-| seller  | string | null: false |
-| item_category   | string | null: false |
-| item_status | string | null: false |
-| delivery_terms  | string | null: false |
-| place_of_origin | string | null: false |
-| shipping_status | string | null: false |
-| users  | references | null: false, foreign_key: true |
-| item_purchases | references | null: false, foreign_key: true |
+| genre_id  | integer | null: false |
+| user  | references | null: false, foreign_key: true |
 
 
 ### Association
 - belongs_to:user
-- has_one:item_purchases
+- has_one:item_purchase
 
 
 ## deliveryテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| post_code  | string | null: false |
-| prefecture  | string | null: false |
+| post_code  | string| null: false |
+| prefecture  | integer | null: false |
 | city  | string| null: false |
 | street1 | string | null: false |
 | building   | string |  |
