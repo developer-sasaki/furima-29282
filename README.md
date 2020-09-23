@@ -58,8 +58,13 @@ Things you may want to cover:
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| item_name  | string | null: false |
+| name  | string | null: false |
 | price  | integer | null: false |
+| category_id| integer | null: false |
+| status_id| integer | null: false |
+| delivery_terms_id| integer | null: false |
+| place_of_origin_id| integer | null: false |
+| shipping_status_id| integer | null: false |
 | genre_id  | integer | null: false |
 | user  | references | null: false, foreign_key: true |
 
@@ -74,7 +79,7 @@ Things you may want to cover:
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | post_code  | string| null: false |
-| prefecture  | integer | null: false |
+| prefecture_id  | integer | null: false |
 | city  | string| null: false |
 | street1 | string | null: false |
 | building   | string |  |
