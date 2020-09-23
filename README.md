@@ -32,18 +32,16 @@ Things you may want to cover:
 | ------ | ---------- | ------------------------------ |
 | nick_name  | string  | null: false |
 | email_address  | string  | null: false |
-| password | string  | null: false |
+| encrypted_password  | string  | null: false |
 | last_name_zenkaku_kanji  | string  | null: false |
 | first_name_zenkaku_kanji  | string  | null: false |
 | last_name_kana   | string  | null: false |
 | first_name_kana | string  | null: false |
 | birth_day  | date  | null: false |
-| items  | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :items
 - has_many :item_purchases
-- has_many :delivery
 
 ## item_purchasesテーブル
 | Column | Type       | Options                        |
@@ -61,8 +59,6 @@ Things you may want to cover:
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | item_name  | string | null: false |
-| image  | references | null: false|
-| url | references | null: false |
 | price  | integer | null: false |
 | seller  | string | null: false |
 | item_category   | string | null: false |
@@ -87,11 +83,9 @@ Things you may want to cover:
 | prefecture  | string | null: false |
 | city  | string| null: false |
 | street1 | string | null: false |
-| building   | string | null: false |
+| building   | string |  |
 | phone  | string | null: false |
-| items | references | null: false, foreign_key: true |
-| item_purchases  | references | null: false, foreign_key: true |
-| users | references | null: false, foreign_key: true |
+| item_purchase  | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to:item_purchases
+- belongs_to:item_purchase
