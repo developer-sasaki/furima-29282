@@ -65,7 +65,6 @@ Things you may want to cover:
 | delivery_terms_id| integer | null: false |
 | place_of_origin_id| integer | null: false |
 | shipping_status_id| integer | null: false |
-| genre_id  | integer | null: false |
 | user  | references | null: false, foreign_key: true |
 
 
