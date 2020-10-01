@@ -47,11 +47,6 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user, email: @user.email)
         another_user.valid?
         expect(another_user.errors[:email]).to include("has already been taken")
-
-        # @user.save
-        # another_user = FactoryBot.build(:user, email: @user.email)
-        # another_user.valid?
-        # expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
       it "お名前(漢字全角名字)がないと登録できない" do
         @user.last_name_zenkaku_kanji = ""
