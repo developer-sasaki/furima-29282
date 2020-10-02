@@ -108,7 +108,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana 全角カナ文字を使用してください")
       end
-      it "ユーザー本名の名前フリガナは、ひながなでは登録できない" do
+      it "ユーザー本名の名前フリガナは、ひらがなでは登録できない" do
         @user.first_name_kana = "text"
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana 全角カナ文字を使用してください")
