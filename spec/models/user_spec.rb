@@ -33,15 +33,25 @@ RSpec.describe User, type: :model do
       end
       it "passwordが5文字以下であれば登録できない" do
         @user.password = "12345"
-        @user.password_confirmation = "12345"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       end
       it "passwordが存在してもpassword_confirmationが空では登録できない" do
+        @user.password = "12345"
         @user.password_confirmation = ""
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
+      it "passwordが英字のみでは登録できない" do
+        @user.password = "text"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
+        end
+      it "passwordは数字のみでは登録できない" do
+        @user.password = "text"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
+        end
       it "重複したemailが存在する場合登録できないこと" do
         @user.save
         another_user = FactoryBot.build(:user, email: @user.email)
