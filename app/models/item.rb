@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category 
   belongs_to_active_hash :status
   belongs_to_active_hash :place_of_origin
-  belongs_to_active_hash :delivery_term
+  belongs_to_active_hash :delivery_terms
   belongs_to_active_hash :shipping_status
 
    #空の投稿を保存できないようにする
