@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_status
 
    #空の投稿を保存できないようにする
-   validates :name, :price, :user, :title, :text, :genre, presence: true
+   validates :name, :item_detail, :price, :user, :title, :text, :genre, presence: true
 
    #ジャンルの選択が「--」の時は保存できないようにする
    validates :genre_id, numericality: { other_than: 1 } 
