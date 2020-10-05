@@ -1,0 +1,2 @@
+class PlaceOfOrigin < ApplicationRecord
+end

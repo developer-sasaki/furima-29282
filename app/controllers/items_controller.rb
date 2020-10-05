@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
     @items = Item.all
     
   end
-  
 
   # 画像の保存を許可するストロングパラメーター?user_idをitems_id?
   private

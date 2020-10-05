@@ -1,0 +1,2 @@
+class DeliveryTerm < ApplicationRecord
+end
