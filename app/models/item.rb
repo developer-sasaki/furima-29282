@@ -17,9 +17,18 @@ class Item < ApplicationRecord
    validates :place_of_origin_id, numericality: { other_than: 1 } 
    validates :shipping_status_id, numericality: { other_than: 1 } 
 
+   validates :price,numericality: { only_integer: true, 
+    greater_than: 300, less_than:9999999 }
+
 
   has_one_attached :image
   belongs_to:user
   has_one:item_purchase
+
+  with_options presence: true do
+    validates :price, format: { with: /\A[0-9]+\z/, message: "is invalid. Input full-width Half-width alphanumeric."}
+  end
+
+  
   
 end
