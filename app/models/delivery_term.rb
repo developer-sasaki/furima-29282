@@ -1,4 +1,4 @@
-class DeliveryTerms < ActiveHash::Base
+class DeliveryTerm < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '１〜2日で発送' },
