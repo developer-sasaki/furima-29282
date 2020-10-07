@@ -1,22 +1,25 @@
-function check() {
-    //要素を取得してくる記述をする
-    const items = document.getElementById(".item-price");
-    const items = document.getElementById(".dd-tax-price");
-    const items = document.getElementById(".profit");
-    
-    //イベントはinputで発火させる
-    items.addEventListener("input", () => {
-     
-      // 要素取得した値を使って計算処理をしていただく
-  
-      const add-tax-price = 10%
-      var profit = 90%
-      var item-price =add-tax-price + profit
-     
-      console.log(item-price);
-      console.log(Math.floor(add-tax-price));
-      console.log(Math.floor(profit));
+window.addEventListener("load", function () {
 
-  });
-}
-  window.addEventListener("load", check);
+    //要素を取得してくる記述をする
+    const items1 = document.getElementById("item-price");
+    const items2 = document.getElementById("add-tax-price");
+    const items3 = document.getElementById("profit");
+
+    //イベントはinputで発火させる
+    items1.addEventListener("input",function () {
+    //  items１の中身を取る記述
+
+    const price = items1.value;
+      // 要素取得した値を使って計算処理をしていただく
+
+      console.log("price")
+  
+      const tax = Math.floor(price * 0.1); //販売手数料
+      const profit = Math.floor(price * 0.9); //販売利益
+     
+      items2.textContent = tax; 
+      items3.textContent = profit; 
+
+
+  })
+})
