@@ -13,14 +13,24 @@ class Item < ApplicationRecord
   validates :name, :image, :item_detail, :price, :user, presence: true
 
   # ジャンルの選択が「--」の時は保存できないようにする
-  validates :category_id, numericality: { other_than: 1 }
-  validates :status_id, numericality: { other_than: 1 }
-  validates :delivery_term_id, numericality: { other_than: 1 }
-  validates :place_of_origin_id, numericality: { other_than: 1 }
-  validates :shipping_status_id, numericality: { other_than: 1 }
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :status_id
+    validates :delivery_term_id
+    validates :place_of_origin_id
+    validates :shipping_status_id
+  end
+   
+        #   validates :category_id, numericality: { other_than: 1 }
+        #   validates :status_id, numericality: { other_than: 1 }
+        #   validates :delivery_term_id, numericality: { other_than: 1 }
+        #   validates :place_of_origin_id, numericality: { other_than: 1 }
+        #   validates :shipping_status_id, numericality: { other_than: 1 }
+  
   validates :price, inclusion: { in: 300..9_999_999, message: ' is invalid. Price need between ¥300〜9,999,999' }
 
   with_options presence: true do
     validates :price, format: { with: /\A[0-9]+\z/, message: 'is invalid. Input Half-width numeric.' }
   end
+
 end
