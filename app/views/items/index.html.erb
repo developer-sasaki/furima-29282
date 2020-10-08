@@ -127,18 +127,23 @@
     <ul class='item-lists'>
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+     <%# <% @items.each do |item| %>
+     <%# <%end%> 
       <li class='list'>
         <%= link_to "#" do %>
         <div class='item-img-content'>
+          
+          <%# <%= image_tag @items.image, class: 'items-image' if items.image.attached? %>
           <%= image_tag "item-sample.png", class: "item-img" %>
 
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
-          </div>
+            <%# 商品が売れていればsold outを表示しましょう %>
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+        </div>
+
           <%# //商品が売れていればsold outを表示しましょう %>
 
-        </div>
         <div class='item-info'>
           <h3 class='item-name'>
             <%= "商品名" %>
@@ -182,7 +187,8 @@
 </div>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="#">
+  <a href= "/items/new">
+  <%# リンクの際はnew_items_pathを入れる今回はURLは、 %>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
 </div>
