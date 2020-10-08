@@ -21,11 +21,9 @@ class Item < ApplicationRecord
     validates :shipping_status_id
   end
 
-  
   validates :price, inclusion: { in: 300..9_999_999, message: ' is invalid. Price need between ¥300〜9,999,999' }
 
   with_options presence: true do
     validates :price, format: { with: /\A[0-9]+\z/, message: 'is invalid. Input Half-width numeric.' }
   end
-
 end
