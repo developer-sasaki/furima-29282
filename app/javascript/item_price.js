@@ -11,8 +11,6 @@ window.addEventListener("load", function () {
 
     const price = items1.value;
       // 要素取得した値を使って計算処理をしていただく
-
-      console.log("price")
   
       const tax = Math.floor(price * 0.1); //販売手数料
       const profit = Math.floor(price * 0.9); //販売利益

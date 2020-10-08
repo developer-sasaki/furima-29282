@@ -66,17 +66,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price  is invalid. Price need between ¥300〜9,999,999')
       end
-      # it "商品名が40文字以上では登録できない" do
-      #   @item.item_detail = "a" * 41
-      #    @item.valid?
-
-      #    expect(@item.errors.full_messages).to include("Name is too much (maximum is 40 charactors ")
-      # end
-      # it "商品説明はは1000文字以上では登録できない" do
-      #    @item.item_detail = "a" * 1001
-      #    @item.valid?
-      #   expect(@item.errors.full_messages).to include("Item detail is too long (maximum is 1000 characters")
-      # end
     end
   end
 end

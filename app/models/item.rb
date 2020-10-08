@@ -18,11 +18,6 @@ class Item < ApplicationRecord
   validates :delivery_term_id, numericality: { other_than: 1 }
   validates :place_of_origin_id, numericality: { other_than: 1 }
   validates :shipping_status_id, numericality: { other_than: 1 }
-
-  #  validates :name,length: { minimum: 1, maximum: 40 }
-  #  validates :item_detail,length: { minimum: 1, maximum: 1000 }
-
-  #  validates :price , numericality: { greater_than: 300, less_than:9999999 }
   validates :price, inclusion: { in: 300..9_999_999, message: ' is invalid. Price need between ¥300〜9,999,999' }
 
   with_options presence: true do
