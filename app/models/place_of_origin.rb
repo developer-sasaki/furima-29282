@@ -9,7 +9,7 @@ class PlaceOfOrigin < ActiveHash::Base
     { id: 7, name: '山形県' },
     { id: 8, name: '福島県' },
     { id: 9, name: '茨城県' },
-    { id: 10, name: '栃木県'},
+    { id: 10, name: '栃木県' },
     { id: 11, name: '埼玉県' },
     { id: 12, name: '千葉県' },
     { id: 13, name: '東京都' },
@@ -18,7 +18,7 @@ class PlaceOfOrigin < ActiveHash::Base
     { id: 16, name: '富山県' },
     { id: 17, name: '石川県' },
     { id: 18, name: '福井県' },
-    { id: 19, name: '山梨県'},
+    { id: 19, name: '山梨県' },
     { id: 20, name: '長野県' },
     { id: 21, name: '岐阜県' },
     { id: 22, name: '静岡県' },
@@ -37,7 +37,7 @@ class PlaceOfOrigin < ActiveHash::Base
     { id: 35, name: '山口県' },
     { id: 36, name: '徳島県' },
     { id: 37, name: '香川県' },
-    { id: 38, name: '愛媛県'},
+    { id: 38, name: '愛媛県' },
     { id: 39, name: '高知県' },
     { id: 40, name: '福岡県' },
     { id: 41, name: '佐賀県' },
@@ -46,6 +46,6 @@ class PlaceOfOrigin < ActiveHash::Base
     { id: 44, name: '大分県' },
     { id: 45, name: '宮崎県' },
     { id: 46, name: '鹿児島県' },
-    { id: 47, name: '沖縄県'}
+    { id: 47, name: '沖縄県' }
   ]
 end
