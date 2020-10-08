@@ -20,12 +20,7 @@ class Item < ApplicationRecord
     validates :place_of_origin_id
     validates :shipping_status_id
   end
-   
-        #   validates :category_id, numericality: { other_than: 1 }
-        #   validates :status_id, numericality: { other_than: 1 }
-        #   validates :delivery_term_id, numericality: { other_than: 1 }
-        #   validates :place_of_origin_id, numericality: { other_than: 1 }
-        #   validates :shipping_status_id, numericality: { other_than: 1 }
+
   
   validates :price, inclusion: { in: 300..9_999_999, message: ' is invalid. Price need between ¥300〜9,999,999' }
 

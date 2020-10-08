@@ -27,42 +27,42 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it '価格が空では登録できない' do
-        @item.price = ''
+        @item.price = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it 'カテゴリーが空では登録できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it '商品の状態が空だと登録できない' do
-        @item.status_id = '1'
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Status must be other than 1')
       end
       it '発送までの日数が空では登録できない' do
-        @item.delivery_term_id = '1'
+        @item.delivery_term_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Delivery term must be other than 1')
       end
       it '発送元の地域が空では登録できない' do
-        @item.place_of_origin_id = '1'
+        @item.place_of_origin_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Place of origin must be other than 1')
       end
       it '配送料の負担が空では登録できない' do
-        @item.shipping_status_id = '1'
+        @item.shipping_status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping status must be other than 1')
       end
       it '価格が300円以下であれば登録できない' do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Price  is invalid. Price need between ¥300〜9,999,999')
       end
       it '価格が9,999,999円以上であれば登録できない' do
-        @item.price = '10,000,000'
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price  is invalid. Price need between ¥300〜9,999,999')
       end
