@@ -27,7 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    
+    if @item.save
+      redirect_to item_path
+    end  
   end
 
   private
