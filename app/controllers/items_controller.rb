@@ -22,12 +22,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+ 
   end
 
   def update
-    @item.update(message_params)
-    if redirect_to item_path
+    if @item.update(message_params)
+      redirect_to item_path
+    else
+      render :edit
+
     end
+  
   end
 
   private
