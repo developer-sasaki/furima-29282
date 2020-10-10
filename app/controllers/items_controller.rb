@@ -19,17 +19,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
   end
 
   def edit
-    
   end
 
   def update
-    if @item.save
-      redirect_to item_path
-    end  
+    @item.update(message_params)
+    if redirect_to item_path
+    end
   end
 
   private
@@ -41,5 +39,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
