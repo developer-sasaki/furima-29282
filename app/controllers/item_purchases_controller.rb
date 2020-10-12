@@ -4,8 +4,8 @@ class ItemPurchasesController < ApplicationController
   end
 
   def create
-    @item_purchases = ItemPurchase.new(item_purchases_params)
-    if @order.valid?
+    @item_purchases = ItemPurchase.new(item_purchase_params)
+    if @item_purchases.valid?
       @item_purchases.save
       return redirect_to root_path
     else
@@ -15,8 +15,8 @@ class ItemPurchasesController < ApplicationController
 
   private
 
-  def item_purchases_params
-    params.require(:item_purchases).permit(:price)
+  def item_purchase_params
+    params.require(:item_purchase).permit(:price)
   end
 
 end
