@@ -1,9 +1,9 @@
 class FormObject
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :prefecture, :city, :street1, :building, :phone
+  attr_accessor :user_id, :item_id, :post_code, :prefecture, :city, :street1, :building, :phone, :token
 
-  validates :user_id, :item_id, :post_code, :prefecture, :city, :street, :building, :phone, presence: true
-  validates :prefecture, numericality: { other_than: 0, message: "can't be blank" }
+  validates :user_id, :item_id, :post_code, :prefecture_id, :city, :street, :building, :phone, presence: true
+  validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :phone, numericality: {with: /\A\d{11}\z/, message: "is invalid. Input 11 numeric."}
 
 
@@ -14,7 +14,7 @@ class FormObject
   
   def save
     purchase=ItemPurchase.create(item_id: item, user_id: user)
-    Delivery.create(post_code: post_code, prefecture: prefecture, city: city, street1: street, building: building, purchase: purchase.id)
+    Delivery.create(post_code: post_code, prefecture_id: prefecture, city: city, street1: street, building: building, phone: phone ,purchase: purchase.id)
   end
 
 end

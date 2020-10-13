@@ -6,9 +6,9 @@ class ItemPurchasesController < ApplicationController
 
   def create
     @form_object =FormObject.new(item_purchase_params)
-    if @item_purchases.valid?
+    if @form_object.valid?
       pay_item
-      @item_purchases.save
+      @form_object.save
       return redirect_to root_path
     else
       render 'index'
@@ -18,7 +18,7 @@ class ItemPurchasesController < ApplicationController
   private
 
   def item_purchase_params
-    params.permit(:user_id, :item_id, :post_code, :prefecture_id, :city, :street1, :building, :phone_number).merge(token: params[:token])
+    params.permit(:item_id, :post_code, :prefecture_id, :city, :street1, :building, :phone, :token).merge(user_id: current_user.id)
   end
   
   def pay_item
