@@ -3,11 +3,11 @@ FactoryBot.define do
     name { 'アイテム' }
     item_detail { 'name' }
     price { 300 }
-    category_id { 2 }
-    status_id { 3 }
-    shipping_status_id { 3 }
-    delivery_term_id {4}
-    place_of_origin_id {5}
+    category { 2 }
+    status { 3 }
+    shipping_status { 3 }
+    delivery_term {4}
+    place_of_origin {5}
     association :user
 
     after(:build) do |item|

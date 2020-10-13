@@ -14,11 +14,11 @@ class Item < ApplicationRecord
 
   # ジャンルの選択が「--」の時は保存できないようにする
   with_options numericality: { other_than: 1 } do
-    validates :category_id
-    validates :status_id
-    validates :delivery_term_id
-    validates :place_of_origin_id
-    validates :shipping_status_id
+    validates :category
+    validates :status
+    validates :delivery_term
+    validates :place_of_origin
+    validates :shipping_status
   end
 
   validates :price, inclusion: { in: 300..9_999_999, message: ' is invalid. Price need between ¥300〜9,999,999' }
