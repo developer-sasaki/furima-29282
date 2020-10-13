@@ -1,7 +1,6 @@
 class ItemPurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
   def index
-    @item = Item.find(params[:item_id])
     @form_object =FormObject.new
   end
 
@@ -25,14 +24,14 @@ class ItemPurchasesController < ApplicationController
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
-    amount: item_purchase_params[:price],  # 商品の値段
+    amount: @item.price,  # 商品の値段
     card: item_purchase_params[:token],    # カードトークン
     currency: 'jpy'                 # 通貨の種類（日本円）
   )
    end
 
   def set_item
-     @item_purchases = ItemPurchase.find(params[:id])
+     @item = Item.find(params[:item_id])
   end
 
 end
