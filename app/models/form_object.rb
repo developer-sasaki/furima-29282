@@ -8,10 +8,9 @@ class FormObject
 
 
   with_options presence: true do
-  validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "はハイフンが必要です（例：123-4567）"}
-  validates :prefecture_id, numericality: { other_than: 1 , message: "都道府県名をお選びください"}
-  # { other_than: 0, message: "can't be blank" }
-  validates :phone, numericality: {with: /\A\d{11}\z/, message: " ハイフンは不要で、11桁以内でご入力ください"}
+  validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "Post code can't be blank"}
+  validates :prefecture_id, numericality: { other_than: 1 , message: "prefecture must be other than 1"}
+  validates :phone, numericality: {with: /\A\d{11}\z/, message: " phone can't be blank"}
   
 end
   
