@@ -2,7 +2,7 @@ class FormObject
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :city, :street1, :building, :phone, :token
 
-  validates :user_id, :item_id, :city, :street1, :building, presence: true
+  validates :user_id, :item_id, :city, :street1, :building, :token, presence: true
  
 
 
