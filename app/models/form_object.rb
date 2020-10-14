@@ -14,7 +14,7 @@ class FormObject
   
   def save
     purchase=ItemPurchase.create(item_id: item_id, user_id: user_id)
-    Delivery.create(post_code: post_code, prefecture_id: prefecture_id, city: city, street1: street1, building: building, phone: phone ,purchase: purchase.id)
+    Delivery.create(post_code: post_code, prefecture_id: prefecture_id, city: city, street1: street1, building: building, phone: phone ,item_purchase_id: purchase.id)
   end
 
 end
