@@ -2,6 +2,9 @@ class ItemPurchasesController < ApplicationController
   before_action :authenticate_user!, only:  [:index, :create]
   before_action :set_item, only: [:index, :create]
   def index
+    if  @item.user_id == current_user.id||@item.item_purchase != nil
+      return redirect_to root_path
+    end
     @form_object =FormObject.new
   end
 
