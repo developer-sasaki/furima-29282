@@ -34,17 +34,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-   if @item.destroy 
-    redirect_to root_path
-   else 
-    render :show
-   end
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
 
   def message_params
-    params.require(:item).permit(:name, :image, :item_detail, :price, :category_id, :status_id, :delivery_term_id, :place_of_origin_id, :shipping_status_id, :user).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :image, :item_detail, :price, :category_id, :status_id, :delivery_term_id, :place_of_origin_id, :shipping_status_id).merge(user_id: current_user.id)
   end
 
   def set_item
