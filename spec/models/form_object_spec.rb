@@ -63,7 +63,7 @@ RSpec.describe FormObject, type: :model do
       it '電話番号は11桁桁以上では登録できない' do
         @form_object.phone = '111111111111'
         @form_object.valid?
-        expect(@form_object.errors.full_messages).to include("Phone can't be more than 11")
+        expect(@form_object.errors.full_messages).to include("Phone no need -, max11 number")
       end
     end
   end

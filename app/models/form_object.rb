@@ -6,7 +6,7 @@ class FormObject
     validates :user_id, :item_id, :city, :street1, :token
     validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "need -" }
     validates :prefecture_id, numericality: { other_than: 1, message: 'must be other than 1' }
-    validates :phone, format: { with: /\A\d{11}\z/, message: "can't be more than 11" }
+    validates :phone, format: { with: /\A\d{11}\z/, message: "no need -, max11 number" }
   end
 
   def save
