@@ -26,11 +26,6 @@ RSpec.describe FormObject, type: :model do
         @form_object.valid?
         expect(@form_object.errors.full_messages).to include("Street1 can't be blank")
       end
-      it 'buildingが空では登録できないこと' do
-        @form_object.building = ''
-        @form_object.valid?
-        expect(@form_object.errors.full_messages).to include("Building can't be blank")
-      end
       it 'tokenが空では登録できないこと' do
         @form_object.token = ''
         @form_object.valid?
